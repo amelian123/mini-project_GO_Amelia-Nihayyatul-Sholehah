@@ -11,4 +11,5 @@ type Order struct {
 	UserID     int      `json:"user_id" form:"user_id"`
 	User       User     `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	EventName  string   `json:"event_name" form:"event_name"`
+	Status    string    `json:"status" form:"status"`
 }
