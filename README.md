@@ -1,2 +1,5 @@
-# mini-project_GO_Amelia-Nihayyatul-Sholehah
-Tugas Mini Project Golang Alterra Kampus Merdeka
+## MINI PROJECT
+
+Nama : Amelia Nihayyatul Sholehah
+
+Kelas : Golang B
