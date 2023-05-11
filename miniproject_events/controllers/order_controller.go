@@ -47,7 +47,7 @@ func CreateOrderController(c echo.Context) error {
 	order := models.Order{}
 	c.Bind(&order)
 
-	if err := config.DB.Create(&order).Error; err != nil {
+	if err := config.DB.Save(&order).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 	return c.JSON(http.StatusOK, map[string]interface{}{
