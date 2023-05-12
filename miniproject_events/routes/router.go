@@ -61,13 +61,14 @@ func New() *echo.Echo {
 
 	//Orders routes admin
 	eOrders := e.Group("/orders")
-	eOrders.POST("", controllers.CreateOrderController)
+	eOrders.GET("", controllers.GetOrdersController)
 	eOrders.GET("/:id", controllers.GetOrderController)
 
 	//Orders routes user
 	eOrdersJwt := eOrders.Group("/user")
 	eOrdersJwt.Use(mid.JWT([]byte(constants.SECRET_JWT)))
-	eOrdersJwt.GET("", controllers.GetOrdersController)
+	eOrdersJwt.POST("", controllers.CreateOrderController)
+	eEventsJwt.PUT("/:id", controllers.UpdateOrderController)
 	eOrdersJwt.DELETE("/:id", controllers.DeleteOrderController)
 
 	return e
